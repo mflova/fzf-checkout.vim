@@ -247,10 +247,11 @@ function! fzf_checkout#list(bang, type, options, deprecated) abort
     endif
   endif
 
+  let l:mflova_help_keys = ' :: [ALT]-ENTER ([forced] checkout), CTRL-B (create), CTRL-F (diff), CTRL-D (delete), CTRL-R (rebase), CTRL-E (merge), CTRL-T (track)'
   let l:valid_keys = join(l:keybindings, ',')
   let l:fzf_options = [
         \ '--prompt', l:prompt,
-        \ '--header', l:current,
+        \ '--header', l:current . l:mflova_help_keys,
         \ '--nth', '1',
         \ '--multi',
         \ '--expect', l:valid_keys,
@@ -268,7 +269,6 @@ function! fzf_checkout#list(bang, type, options, deprecated) abort
         \ a:bang,
         \))
 endfunction
-
 
 function! fzf_checkout#complete_tags(arglead, cmdline, cursorpos) abort
   let l:cmdlist = split(a:cmdline)
