@@ -247,7 +247,7 @@ function! fzf_checkout#list(bang, type, options, deprecated) abort
     endif
   endif
 
-  let l:mflova_help_keys = ' :: [ALT]-ENTER ([forced] checkout), CTRL-B (create), CTRL-F (diff), CTRL-D (delete), CTRL-R (rebase), CTRL-E (merge), CTRL-T (track)'
+  let l:mflova_help_keys = ' :: [ALT]-ENTER ([forced] checkout), CTRL-B (create), CTRL-F (diff), CTRL-D (delete), CTRL-R (rebase), CTRL-E (merge), CTRL-T (track), CTRL-I (i-rebase)'
   let l:valid_keys = join(l:keybindings, ',')
   let l:fzf_options = [
         \ '--prompt', l:prompt,
